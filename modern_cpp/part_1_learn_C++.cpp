@@ -13,6 +13,7 @@ class vBool{
     }
 };
 int main(){
+  /*
   int arr[]={5,4,3,2,1};
   for(int val : arr){
     std::cout<<val<<" ";
@@ -22,4 +23,6 @@ int main(){
   for(int val : v){
     std::cout<<val<<" ";
   }
+  */
+ vBool v{1,2,3,4};
 }
