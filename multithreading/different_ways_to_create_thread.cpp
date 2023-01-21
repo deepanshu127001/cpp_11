@@ -28,7 +28,8 @@ int main(){
 }
 */
 
-//functors 
+//3 functors 
+/*
 class Base{
     public :
     void operator()(int x){
@@ -39,6 +40,22 @@ class Base{
 };
 int main(){
     std::thread th(Base(),10);
+    th.join();
+    return 0;
+}
+*/
+
+//4 Non static member function 
+class Base{
+    public :
+        void run(int x){
+            while(--x)
+                cout<<x;
+        }
+};
+int main(){
+    Base b;
+    std::thread th(&Base::run,&b,10);
     th.join();
     return 0;
 }
