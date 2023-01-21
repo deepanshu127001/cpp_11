@@ -46,6 +46,7 @@ int main(){
 */
 
 //4 Non static member function 
+/*
 class Base{
     public :
         void run(int x){
@@ -56,6 +57,22 @@ class Base{
 int main(){
     Base b;
     std::thread th(&Base::run,&b,10);
+    th.join();
+    return 0;
+}
+*/
+
+//5 static member function 
+class Base{
+    public :
+        static void run(int x){
+            while(--x){
+                cout<<x;
+            }
+        }
+};
+int main(){
+    std::thread th(&Base::run,10);
     th.join();
     return 0;
 }
